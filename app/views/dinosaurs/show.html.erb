@@ -1,0 +1,10 @@
+Rails.application.routes.draw do
+   get 'dinosaurs' => 'dinosaur#index'
+   get 'dinosaurs/new' => "dinosaurs#new"
+   get 'dinosaurs/:id' => 'dinosaurs#show', as: :dinosaur
+end
+
+<h1><%= @dinosaur.name %></h1>
+
+<p>Age: <%= @dinosaur.age %></p>
+<%= image_tag @dinosaur.image_url %>
